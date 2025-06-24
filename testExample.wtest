@@ -1,0 +1,28 @@
+import starwars.*
+
+describe "group of tests " {
+  const muerteInminente = new Suceso(cargaEmocional = -60)
+  const matarLuke = new Suceso(cargaEmocional = 200)
+  const anakin = new Maestro(midiclorianos = 10000, sable = new Arma(energia = 3), esperanza = 50)
+
+  test "valentia R2D2 " {
+    assert.equals(500, r2d2.potencia())
+  }
+  test "la novia de anakin se esta muriendo " {
+    const nivel = ladoOscuro.nivelFuerza()
+    anakin.vivir(muerteInminente)
+    assert.equals(ladoOscuro,anakin.lado())
+    assert.equals(nivel+1,ladoOscuro.nivelFuerza())
+    }
+
+
+  test "le piden a vader que mate a luke " {
+    anakin.vivir(muerteInminente)
+    const vader = anakin
+    const nivel = ladoOscuro.nivelFuerza()
+    vader.vivir(matarLuke)
+    assert.equals(ladoLuz,vader.lado())
+    assert.equals(nivel/2,ladoOscuro.nivelFuerza())
+  }
+
+}
